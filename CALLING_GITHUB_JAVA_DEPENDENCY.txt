@@ -1,0 +1,146 @@
+----------------------------------------------------------------
+HOW TO USE GITHUB PUBLISHED LIBRARY BY USING DEPENDENCY
+----------------------------------------------------------------
+---------------------------------
+A: FOR GRADLE
+---------------------------------
+
+Steps:
+		-------------------------------------------------------------
+		1: Specify repository (Github package repo) to pull package
+		-------------------------------------------------------------
+				==>> Syntax:
+						------------------------------------------------------------------
+						repositories {
+						maven {
+								url = uri("https://maven.pkg.github.com/userName/repositoryName")
+								credentials {
+									username = "userName"
+									password = "read_access_token"
+								}
+							}
+						}
+						------------------------------------------------------------------
+					
+				==>> Example
+						------------------------------------------------------------------
+						repositories {
+						maven {
+								url = uri("https://maven.pkg.github.com/jamalakida/java-rest-template-assistance-library")
+								credentials {
+									username = "jamalakida"
+									password = "xxxYYYzzzPPkk"
+								}
+							}
+						}
+						------------------------------------------------------------------
+
+		-------------------------------------------------------------
+		2: Add dependency
+		-------------------------------------------------------------
+		
+				==>> Syntax:
+						------------------------------------------------------------------
+						implementation 'group_id:artifact_id:version'
+						------------------------------------------------------------------
+						
+				==>> Example:
+						------------------------------------------------------------------
+						implementation 'com.jamal:java-rest-template-assistance:1.0.0'
+						------------------------------------------------------------------
+
+
+---------------------------------
+B: FOR MAVEN
+---------------------------------
+Steps:
+		-------------------------------------------------------------
+		1: Specify repository (Github package repo) to pull package
+		-------------------------------------------------------------
+				==>> Syntax:
+						------------------------------------------------------------------
+						<repositories>
+							<repository>
+								<id>github-userName</id>
+								<url>https://maven.pkg.github.com/userName/repositoryName</url>
+							</repository>
+						</repositories>
+						------------------------------------------------------------------
+					
+				==>> Example
+						------------------------------------------------------------------
+						<repositories>
+							<repository>
+								<id>github-jamalakida</id>
+								<url>https://maven.pkg.github.com/jamalakida/java-rest-template-assistance-library</url>
+							</repository>
+						</repositories>
+						------------------------------------------------------------------
+
+		-------------------------------------------------------------
+		2: Add dependency
+		-------------------------------------------------------------
+		
+				==>> Syntax:
+						------------------------------------------------------------------
+						<dependencies>
+							<dependency>
+								<groupId>group_id</groupId>
+								<artifactId>artifact_d</artifactId>
+								<version>version</version>
+							</dependency>
+						</dependencies>
+						------------------------------------------------------------------
+						
+				==>> Example:
+						------------------------------------------------------------------
+						<dependencies>
+							<dependency>
+								<groupId>com.jamal</groupId>
+								<artifactId>java-rest-template-assistance</artifactId>
+								<version>1.0.0</version>
+							</dependency>
+						</dependencies>
+						------------------------------------------------------------------
+						
+		--------------------------------------------------------------------------
+		3: Create settings.xml to store credentials while downloading dependency
+		--------------------------------------------------------------------------
+			
+				==>> Syntax: 
+						------------------------------------------------------------------
+						<settings>
+							<servers>
+								<server>
+									<id>github-userName</id>
+									<username>userName</username>
+									<password>read_access_token</password>
+								</server>
+							</servers>
+						</settings>
+						------------------------------------------------------------------
+						
+				==>> Examples: 
+						------------------------------------------------------------------
+						<settings>
+							<servers>
+								<server>
+									<id>github-jamalakida</id>
+									<username>jamalakida</username>
+									<password>xxxYYYzzzPPkk</password>
+								</server>
+							</servers>
+						</settings>
+						------------------------------------------------------------------
+						
+		--------------------------------------------------------------------------
+		4: Use Command Line to configure location of your settings.xml
+		--------------------------------------------------------------------------
+				==>> Command:
+						------------------------------------------------------------------
+						mvn -s /path/to/your/settings.xml clean install
+						------------------------------------------------------------------
+						
+		--------------------------------------------------------------------------
+		5: Referesh dependencies in your IDE
+		--------------------------------------------------------------------------

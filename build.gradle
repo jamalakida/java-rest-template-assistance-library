@@ -1,0 +1,97 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id 'org.springframework.boot' version '3.0.0' apply false
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'maven-publish'
+    id 'signing'
+}
+
+//------------------------------------- GET PUBLISHING CREDENTIALS  BASING ON ACTIVE PROFILE----------------------------
+// Getting the name of active profile
+def applicationProps = new Properties()
+file('src/main/resources/application.properties').withInputStream { applicationProps.load(it) }
+def activeProfile = applicationProps.getProperty('spring.profiles.active')
+
+// Extract the publishing credentials
+def publishingProps = new Properties()
+file("src/main/resources/${activeProfile}.properties").withInputStream { publishingProps.load(it) }
+
+// Extract the properties
+def packagesInitializer = publishingProps.getProperty('packages.initializer')
+def packagesUrl = publishingProps.getProperty('packages.url')
+def gprUser = publishingProps.getProperty('gpr.user')
+def gprToken = publishingProps.getProperty('gpr.token')
+def packageGroupId = publishingProps.getProperty('package.group.id')
+def packagesArtifactId = publishingProps.getProperty('package.artifact.id')
+def packageVersion = publishingProps.getProperty('package.version')
+//----------------------------------------------------------------------------------------------------------------------
+
+
+group 'com.jamal'
+version packageVersion
+sourceCompatibility = '17'
+description = 'A Spring boot library created at 2023 for the purpose of facilitating rest template inter-service communication'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates' }
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom SpringBootPlugin.BOM_COORDINATES
+    }
+}
+
+ext {
+    set('springCloudVersion', "2022.0.0-RC2")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'org.springframework.boot:spring-boot-starter-mail:3.0.5'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:3.1.1'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+
+    implementation 'org.projectlombok:lombok:1.18.22'
+    implementation 'org.jetbrains:annotations:20.1.0'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //For GovEsb (eGA)
+    implementation group: 'org.wso2.apache.httpcomponents', name: 'httpclient', version: '4.3.1.wso2v1'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.14.1'
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.15'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            groupId = packageGroupId
+            artifactId = packagesArtifactId
+            version = packageVersion
+        }
+    }
+    repositories {
+        maven {
+            name = packagesInitializer
+            url = uri(packagesUrl)
+            credentials {
+                username = gprUser
+                password = gprToken
+            }
+        }
+    }
+}
