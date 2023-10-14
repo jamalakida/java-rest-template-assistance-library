@@ -44,7 +44,7 @@
 ## Library Importation
 <a id="libraryImportation"></a>
 - <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Importing by dependency</a>
-- <a id="./importation_methods/IMPORT_AS_JAR_FILE.txt">Importing by jar file</a>
+- <a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Importing by jar file</a>
 
 ## Dependency Injection (In a class, Abstract or Interface)
 <a id="dependencyInjection"></a>
