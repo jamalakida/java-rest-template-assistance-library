@@ -190,7 +190,7 @@ Steps:
 ## Privacy
 <a id="privacy"></a>
 ```bash
-This is a private library. It is available only by using pccb intranet.
+This is a public library. It is available and can be used by any one.
 ```
 
 ## Clone the repository
