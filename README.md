@@ -53,7 +53,9 @@
 
 ## Usage  
 Steps: 
-### A. Import libray as a jar or by dependency
+### A. Import libray as:
+- <a href="https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar">JAR File</a> (<a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Instructions</a>)  
+- <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Dependency</a>
 
 ### B. Dependency Injection (In a class, Abstract or Interface)
 <a id="dependencyInjection"></a>
