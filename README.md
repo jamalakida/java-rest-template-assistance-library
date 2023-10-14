@@ -196,7 +196,7 @@ This is a public library. It is available and can be used by any one.
 ## Clone the repository
 <a id="clone"></a>
 ```bash
-git clone https://github.com/jamalakida/remote-assitance
+git clone https://github.com/jamalakida/java-rest-template-assistance-library.git
 ```
 
 
