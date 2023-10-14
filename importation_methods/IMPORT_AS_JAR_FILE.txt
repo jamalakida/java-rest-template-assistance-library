@@ -1,0 +1,49 @@
+----------------------------------------------------------------
+HOW TO IMPORT GITHUB PUBLISHED LIBRARY  AS A JAR FILE
+----------------------------------------------------------------
+---------------------------------
+A: FOR GRADLE
+---------------------------------
+
+Steps:
+		-------------------------------------------------------------
+		1: Download Published JAR File release
+		-------------------------------------------------------------
+				==>> URL:
+						------------------------------------------------------------------
+						https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar
+						------------------------------------------------------------------
+					
+			
+
+		-------------------------------------------------------------
+		2: Import the downloaded jar file in your project
+		-------------------------------------------------------------
+				==>> You can import by using IDE (For Both Maven and Gradle Users)
+						
+				==>> You can import by putting it into .m2 directory of your working project (For Maven users)
+				
+				
+		-------------------------------------------------------------
+		3: Add dependency
+		-------------------------------------------------------------
+				==>> For Gradle Users
+						- Add this dependency in your build.gradle file
+						------------------------------------------------------------------
+						implementation 'com.jamal:java-rest-template-assistance:1.0.0'
+						------------------------------------------------------------------
+						
+				==>> For Maven Users
+						- Add this dependency in your pom.xml file
+						------------------------------------------------------------------
+						<dependency>
+								<groupId>com.jamal</groupId>
+								<artifactId>java-rest-template-assistance</artifactId>
+								<version>1.0.0</version>
+						</dependency>
+						------------------------------------------------------------------
+						
+		-------------------------------------------------------------
+		4: Reload your project dependencies
+		-------------------------------------------------------------
+

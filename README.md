@@ -13,7 +13,8 @@
 <p align="center">
   <a href="#features">Features</a> |
   <a href="#prerequisites">Prerequisites</a> |
-  <a href="./CALLING_GITHUB_JAVA_DEPENDENCY.txt">Calling Dependency</a> |
+  <a href="https://drive.google.com/file/d/1DJoYxvv-LwuQ1I6JH-gu9MfWpW77gh1A/view?usp=drive_link">Dependency Access Token</a> |
+  <a href="importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Library Importation</a> |
   <a href="#dependencyInjection">Dependency Injection</a> |
   <a href="#responses">Responses</a> |
   <a href="#usage-single-data">Usage</a> |
@@ -28,15 +29,23 @@
  - This is a java (SpringBoot) library to be used for java inter-service communication
  - It uses RestTemplate
  - It is generic in nature. Accepts any type of request body or parameter and response
+ - It works with any java version strating with java 8
+ - It can be used by both Maven and Gradle 
+ - It can be used in Java Core and Any Java Framework (Spring, SpringBoot, Kotlin)
+ - It has multiple importation methods as it can be imported by dependency or by .jar file
+ - It handles any type of response (Single data & data list response)
 ```
 
 ## Prerequisites
 <a id="prerequisites"></a>
 ```bash
-- Java 17 or higher
+- Any Java version (>= java 8)
 ```
+## Library Importation
+- <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Importing by dependency</a>
+- <a id="./importation_methods/IMPORT_AS_JAR_FILE.txt">Importing by jar file</a>
 
-## Dependency Injection
+## Dependency Injection (In a class, Abstract or Interface)
 <a id="dependencyInjection"></a>
 ```bash
   @Autowired
