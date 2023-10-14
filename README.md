@@ -17,7 +17,7 @@
   <a href="#libraryImportation">Library Importation</a> |
   <a href="#dependencyInjection">Dependency Injection</a> |
   <a href="#responses">Responses</a> |
-  <a href="#usage-single-data">Usage</a> |
+  <a href="#usage">Usage</a> |
   <a href="#privacy">Privacy</a> |
   <a href="#clone">Clone </a> 
 </p>
@@ -52,7 +52,7 @@
 - <a href="#usage-list-data">Data List Response</a>
 
 ## Usage  
-Steps: 
+<a id="usage"></a> Steps: 
 ### A. Import libray as:
 - <a href="https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar">JAR File</a> (<a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Instructions</a>)  
 - <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Dependency</a>
