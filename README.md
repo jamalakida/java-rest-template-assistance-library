@@ -46,13 +46,6 @@
 - <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Importing by dependency</a>
 - <a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Importing by jar file</a>
 
-## Dependency Injection (In a class, Abstract or Interface)
-<a id="dependencyInjection"></a>
-```bash
-  @Autowired
-    protected RemoteAssistance remoteAssistance;
-```
-
 ## Response Involved
 <a id="responses"></a>
 - <a href="#usage-single-data">Normal Data Response</a>
@@ -61,7 +54,14 @@
 ## Usage  
 Steps: 
 ### A. Import libray as a jar or by dependency
-### B. Normal Data Response
+
+### B. Dependency Injection (In a class, Abstract or Interface)
+<a id="dependencyInjection"></a>
+```bash
+  @Autowired
+    protected RemoteAssistance remoteAssistance;
+```
+### C. Normal Data Response
 <a id="usage-single-data"></a>
 ###### 01. FOR GETTING SINGLE DATA RESPONSE (GET METHOD AS A DEFAULT HTTP METHOD TYPE):
 ```bash
@@ -123,7 +123,7 @@ Steps:
  
   NOTE: request is HttpServletRequest
 ```
-### C. Data List Response
+### D. Data List Response
 <a id="usage-list-data"></a>
 ###### 01. FOR GETTING LIST DATA RESPONSE (BY USING GET AS A DEFAULT HTTP METHOD TYPE):
 ```bash
