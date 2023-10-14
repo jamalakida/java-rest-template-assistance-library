@@ -14,7 +14,7 @@
   <a href="#features">Features</a> |
   <a href="#prerequisites">Prerequisites</a> |
   <a href="https://drive.google.com/file/d/1DJoYxvv-LwuQ1I6JH-gu9MfWpW77gh1A/view?usp=drive_link">Dependency Access Token</a> |
-  <a href="importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Library Importation</a> |
+  <a href="#libraryImportation">Library Importation</a> |
   <a href="#dependencyInjection">Dependency Injection</a> |
   <a href="#responses">Responses</a> |
   <a href="#usage-single-data">Usage</a> |
@@ -42,6 +42,7 @@
 - Any Java version (>= java 8)
 ```
 ## Library Importation
+<a id="libraryImportation"></a>
 - <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Importing by dependency</a>
 - <a id="./importation_methods/IMPORT_AS_JAR_FILE.txt">Importing by jar file</a>
 
