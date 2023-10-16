@@ -24,8 +24,7 @@
 </p>
 
 
-## Features
-<a id="features"></a>
+## <a id="features"></a> Features
 ```bash
  - This is a java (SpringBoot) library to be used for java inter-service communication
  - It uses RestTemplate
@@ -37,19 +36,17 @@
  - It handles any type of response (Single data & data list response)
 ```
 
-## Prerequisites
-<a id="prerequisites"></a>
+## <a id="prerequisites"></a> Prerequisites
 ```bash
 - Any Java version (>= java 8)
 ```
-## Library Importation
-<a id="libraryImportation"></a>
+## <a id="libraryImportation"></a>Library Importation
 - <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Importing by dependency (GitHub)</a>
 - <a href="#mavenCentralDependency">Importing by dependency (Maven Central Repository)</a>
 - <a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Importing by jar file</a>
 
-### Import by Maven Central Repository Dependency
 <a id="mavenCentralDependency"></a>
+### <a id="mavenCentralDependency"></a>Import by Maven Central Repository Dependency
 -  For Gradle Project
 ```bash
   implementation 'io.github.jamalakida:java-rest-template-library:1.0.0'
@@ -64,25 +61,22 @@
 </dependency>
 ```
 
-## Response Involved
-<a id="responses"></a>
+## <a id="responses"></a> Response Involved
 - <a href="#usage-single-data">Normal Data Response</a>
 - <a href="#usage-list-data">Data List Response</a>
 
-## Usage  
-<a id="usage"></a> Steps: 
+## <a id="usage"></a> Usage  
+Steps: 
 ### A. Import libray as:
 - <a href="https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar">JAR File</a> (<a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Instructions</a>)  
 - <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Dependency</a>
 
-### B. Dependency Injection (In a class, Abstract or Interface)
-<a id="dependencyInjection"></a>
+### <a id="dependencyInjection"></a> B. Dependency Injection (In a class, Abstract or Interface)
 ```bash
   @Autowired
     protected RemoteAssistance remoteAssistance;
 ```
-### C. Normal Data Response
-<a id="usage-single-data"></a>
+### C. <a id="usage-single-data"></a> Normal Data Response
 ###### 01. FOR GETTING SINGLE DATA RESPONSE (GET METHOD AS A DEFAULT HTTP METHOD TYPE):
 ```bash
   ProfileDto respProfileData = remoteAssistance.setHeaders(request).data("http://localhost:6666/app/data", ProfileDto.class);
@@ -143,8 +137,7 @@
  
   NOTE: request is HttpServletRequest
 ```
-### D. Data List Response
-<a id="usage-list-data"></a>
+### <a id="usage-list-data"></a> D. Data List Response
 ###### 01. FOR GETTING LIST DATA RESPONSE (BY USING GET AS A DEFAULT HTTP METHOD TYPE):
 ```bash
   List<ProfileDto> respProfileData = remoteAssistance.setHeaders(request).list("http://localhost:6666/app/data", ProfileDto.class);
@@ -207,14 +200,12 @@
 ```
 
 
-## Privacy
-<a id="privacy"></a>
+## <a id="privacy"></a> Privacy
 ```bash
 This is a public library. It is available and can be used by any one.
 ```
 
-## Clone the repository
-<a id="clone"></a>
+## <a id="clone"></a> Clone the repository
 ```bash
 git clone https://github.com/jamalakida/java-rest-template-assistance-library.git
 ```
