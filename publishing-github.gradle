@@ -1,0 +1,27 @@
+//------------------------------------------- FOR GITHUB PUBLISHING ----------------------------------------------------
+// Get GitHub details & Credentials
+apply from: 'values-github.gradle'
+
+//Publishing package to Github
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            groupId = packageGroupId
+            artifactId = packagesArtifactId
+            version = packageVersion
+        }
+    }
+    repositories {
+        maven {
+            name = packagesInitializer
+            url = uri(packagesUrl)
+            credentials {
+                username = gprUser
+                password = gprToken
+            }
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------------------------

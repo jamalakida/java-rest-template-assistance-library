@@ -1,0 +1,70 @@
+//---------------------------------------- FOR PUBLISHING TO MAVEN CENTRAL -------------------------------------
+// By default it looks for vales from gradle.properties
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+
+        mavenJava(MavenPublication) {
+
+            groupId = project.properties["packageGroupId"]
+            artifactId = project.properties["packageArtifactId"]
+            version = project.properties["packageVersion"]
+            from components.java
+
+            pom {
+                name = project.properties["pomName"]
+                description = project.properties["pomDescription"]
+
+                url = project.properties["projectRepositoryUrl"]
+                inceptionYear = project.properties["inceptionYear"]
+
+                licenses {
+                    license {
+                        name = project.properties["licenseName"]
+                        url = project.properties["licenseUrl"]
+                    }
+                }
+                developers {
+                    developer {
+                        id = project.properties["developerId"]
+                        name = project.properties["developerName"]
+                        email = project.properties["developerEmail"]
+                    }
+                }
+                scm {
+                    connection = project.properties["scmConnection"]
+                    developerConnection = project.properties["scmDeveloperConnection"]
+                    url = project.properties["projectRepositoryUrl"]
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = project.properties["mavenCentralName"]
+            url = project.properties["mavenCentralDeployUrl"]
+            credentials {
+                username = project.properties["ossrhUsername"]
+                password = project.properties["ossrhPassword"]
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+javadoc {
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------

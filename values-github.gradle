@@ -1,0 +1,10 @@
+//--------------- PACKAGE DETAILS ----------------------------------
+ext.packageGroupId = 'com.jamal'
+ext.packagesArtifactId = 'java-rest-template-assistance-library'
+ext.packageVersion = '1.0.0'
+
+//--------------- GITHUB DETAILS & CREDENTIALS ----------------------
+ext.packagesUrl = 'https://maven.pkg.github.com/jamalakida/java-rest-template-assistance-library'
+ext.packagesInitializer = 'GitHubPackages'
+ext.gprUser = 'jamalakida'
+ext.gprToken = ''

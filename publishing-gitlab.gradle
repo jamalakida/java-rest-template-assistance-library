@@ -1,0 +1,30 @@
+//------------------------------------------- FOR GITHUB PUBLISHING ----------------------------------------------------
+// Get GitLab details & Credentials
+apply from: 'values-gitlab.gradle'
+
+//Publishing package to GitLab
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            groupId = packageGroupId
+            artifactId = packagesArtifactId
+            version = packageVersion
+        }
+    }
+    repositories {
+        maven {
+            url packagesUrl
+            credentials(HttpHeaderCredentials) {
+                name = gprTokenTypeName
+                value = gprToken
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+            allowInsecureProtocol = true
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------------------------

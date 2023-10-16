@@ -8,29 +8,9 @@ plugins {
     id 'signing'
 }
 
-//------------------------------------- GET PUBLISHING CREDENTIALS  BASING ON ACTIVE PROFILE----------------------------
-// Getting the name of active profile
-def applicationProps = new Properties()
-file('src/main/resources/application.properties').withInputStream { applicationProps.load(it) }
-def activeProfile = applicationProps.getProperty('spring.profiles.active')
-
-// Extract the publishing credentials
-def publishingProps = new Properties()
-file("src/main/resources/${activeProfile}.properties").withInputStream { publishingProps.load(it) }
-
-// Extract the properties
-def packagesInitializer = publishingProps.getProperty('packages.initializer')
-def packagesUrl = publishingProps.getProperty('packages.url')
-def gprUser = publishingProps.getProperty('gpr.user')
-def gprToken = publishingProps.getProperty('gpr.token')
-def packageGroupId = publishingProps.getProperty('package.group.id')
-def packagesArtifactId = publishingProps.getProperty('package.artifact.id')
-def packageVersion = publishingProps.getProperty('package.version')
-//----------------------------------------------------------------------------------------------------------------------
-
-
 group 'com.jamal'
-version packageVersion
+archivesBaseName = 'rest-template-library'
+version '1.0.0'
 sourceCompatibility = '17'
 description = 'A Spring boot library created at 2023 for the purpose of facilitating rest template inter-service communication'
 
@@ -74,24 +54,5 @@ dependencyManagement {
     }
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-
-            groupId = packageGroupId
-            artifactId = packagesArtifactId
-            version = packageVersion
-        }
-    }
-    repositories {
-        maven {
-            name = packagesInitializer
-            url = uri(packagesUrl)
-            credentials {
-                username = gprUser
-                password = gprToken
-            }
-        }
-    }
-}
+// Call file for publishing package to respective repository
+apply from: 'publishing-maven-central.gradle'
