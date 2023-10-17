@@ -69,14 +69,29 @@
 Steps: 
 ### A. Import libray as:
 - <a href="https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar">JAR File</a> (<a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Instructions</a>)  
-- <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Dependency</a>
+- <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">GitHub Dependency</a>
+- <a href="https://central.sonatype.com/artifact/io.github.jamalakida/java-rest-template-library">Maven Central Repository Dependency</a>
 
-### <a id="dependencyInjection"></a> B. Dependency Injection (In a class, Abstract or Interface)
+### B. Create LibraryConfig configuration class for Instantiating the bean of RemoteAssistance
+```bash
+@Configuration
+public class LibraryConfig {
+    @Bean
+    public RemoteAssistance remoteAssistance() {
+        return new RemoteAssistance(); // Instantiating the bean here.
+    }
+}
+```
+
+### <a id="dependencyInjection"></a> C. Dependency Injection (In a class, Abstract or Interface)
 ```bash
   @Autowired
     protected RemoteAssistance remoteAssistance;
+    
 ```
-### C. <a id="usage-single-data"></a> Normal Data Response
+
+
+### D. <a id="usage-single-data"></a> Normal Data Response
 ###### 01. FOR GETTING SINGLE DATA RESPONSE (GET METHOD AS A DEFAULT HTTP METHOD TYPE):
 ```bash
   ProfileDto respProfileData = remoteAssistance.setHeaders(request).data("http://localhost:6666/app/data", ProfileDto.class);
@@ -137,7 +152,7 @@ Steps:
  
   NOTE: request is HttpServletRequest
 ```
-### <a id="usage-list-data"></a> D. Data List Response
+### <a id="usage-list-data"></a> E. Data List Response
 ###### 01. FOR GETTING LIST DATA RESPONSE (BY USING GET AS A DEFAULT HTTP METHOD TYPE):
 ```bash
   List<ProfileDto> respProfileData = remoteAssistance.setHeaders(request).list("http://localhost:6666/app/data", ProfileDto.class);
