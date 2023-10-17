@@ -14,7 +14,7 @@
   <a href="#features">Features</a> |
   <a href="#prerequisites">Prerequisites</a> |
   <a href="https://drive.google.com/file/d/1DJoYxvv-LwuQ1I6JH-gu9MfWpW77gh1A/view?usp=drive_link">Dependency Access Token</a> |
-  <a href="#mavenCentralDependency">Maven Central Dependency</a> |
+  <a href="#mavenCentralDependency">Maven Central Dependency</a> (<a href="https://central.sonatype.com/artifact/io.github.jamalakida/java-rest-template-library">Repository</a>)|
   <a href="#libraryImportation">Library Importation</a> |
   <a href="#dependencyInjection">Dependency Injection</a> |
   <a href="#responses">Responses</a> |
@@ -47,7 +47,7 @@
 
 <a id="mavenCentralDependency"></a>
 ### <a id="mavenCentralDependency"></a>Import by Maven Central Repository Dependency
--  For Gradle Project
+- For Gradle Project
 ```bash
   implementation 'io.github.jamalakida:java-rest-template-library:1.0.0'
 ```
