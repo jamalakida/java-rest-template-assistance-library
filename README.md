@@ -14,7 +14,7 @@
   <a href="#features">Features</a> |
   <a href="#prerequisites">Prerequisites</a> |
   <a href="https://drive.google.com/file/d/1DJoYxvv-LwuQ1I6JH-gu9MfWpW77gh1A/view?usp=drive_link">Dependency Access Token</a> |
-  <a href="#mavenCentralDependency">Maven Central Dependency</a> |
+  <a href="#libraryImportation">Maven Central Dependency</a> |
   <a href="#libraryImportation">Library Importation</a> |
   <a href="#dependencyInjection">Dependency Injection</a> |
   <a href="#responses">Responses</a> |
