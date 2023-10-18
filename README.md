@@ -78,7 +78,17 @@ Steps:
 - <a href="#importByDependency">Dependency</a>
 - <a href="#importByJarFile">Jar File</a>
 
-### B. Create LibraryConfig configuration class for Instantiating the bean of RemoteAssistance
+### B. Instantiate the bean of Remote Assistance Library (Use one the following technique)
+######  Alternative 1: If you have main class in your project
+- Scan remote assistance package as follows
+```bash
+@ComponentScan(basePackages = {"rest.template.library", "your_project"})
+
+NOTE: your_project is the scan for your working project Example: tz.go.pccb.hrms.app
+```
+###### Alternative 2: If you don't have main class in your project
+-  Create LibraryConfig configuration class 
+- Add the following codes
 ```bash
 @Configuration
 public class LibraryConfig {
