@@ -14,7 +14,7 @@
   <a href="#features">Features</a> |
   <a href="#prerequisites">Prerequisites</a> |
   <a href="https://drive.google.com/file/d/1DJoYxvv-LwuQ1I6JH-gu9MfWpW77gh1A/view?usp=drive_link">Dependency Access Token</a> |
-  <a href="#libraryImportation">Maven Central Dependency</a> |
+  <a href="#mavenCentralDependency">Maven Central/Repository Dependency</a> |
   <a href="#libraryImportation">Library Importation</a> |
   <a href="#dependencyInjection">Dependency Injection</a> |
   <a href="#responses">Responses</a> |
@@ -41,12 +41,16 @@
 - Any Java version (>= java 8)
 ```
 ## <a id="libraryImportation"></a>Library Importation
-- <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">Importing by dependency (GitHub)</a>
-- <a href="#mavenCentralDependency">Importing by dependency (<a href="https://central.sonatype.com/artifact/io.github.jamalakida/java-rest-template-library">Maven Central Repository</a>)</a>
-- <a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Importing by jar file</a>
+### 1. Importing by dependency
+- A. <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt"> GitHub</a>
+- B. <a href="https://central.sonatype.com/artifact/io.github.jamalakida/java-rest-template-library">Maven Central</a>
+- C. <a href="https://mvnrepository.com/artifact/io.github.jamalakida/java-rest-template-library/1.0.0">Maven Repository</a>
+
+### 2. Importing by jar file
+- <a href="https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar">Download release package</a> | <a href="./importation_methods/IMPORT_AS_JAR_FILE.txt"> Instructions</a>
 
 <a id="mavenCentralDependency"></a>
-### <a id="mavenCentralDependency"></a>Import by Maven Central Repository Dependency
+### <a id="mavenCentralDependency"></a>Maven Central Or Maven Repository Dependency
 - For Gradle Project
 ```bash
   implementation 'io.github.jamalakida:java-rest-template-library:1.0.0'
@@ -60,6 +64,9 @@
   <version>1.0.0</version>
 </dependency>
 ```
+
+- For Kotlin, SBT, Ivy, Grape, Leiningen, Buildr ->
+  <a href="https://central.sonatype.com/artifact/io.github.jamalakida/java-rest-template-library">Maven Central</a> | <a href="https://mvnrepository.com/artifact/io.github.jamalakida/java-rest-template-library/1.0.0">Maven Repository</a> 
 
 ## <a id="responses"></a> Response Involved
 - <a href="#usage-single-data">Normal Data Response</a>
