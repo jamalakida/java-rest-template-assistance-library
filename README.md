@@ -41,12 +41,12 @@
 - Any Java version (>= java 8)
 ```
 ## <a id="libraryImportation"></a>Library Importation
-### 1. Importing by dependency
+### 1. Importing by dependency <a id="importByDependency"></a>
 - A. <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt"> GitHub</a>
 - B. <a href="https://central.sonatype.com/artifact/io.github.jamalakida/java-rest-template-library">Maven Central</a>
 - C. <a href="https://mvnrepository.com/artifact/io.github.jamalakida/java-rest-template-library/1.0.0">Maven Repository</a>
 
-### 2. Importing by jar file
+### 2. Importing by jar file <a id="importByJarFile"></a>
 - <a href="https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar">Download release package</a> | <a href="./importation_methods/IMPORT_AS_JAR_FILE.txt"> Instructions</a>
 
 <a id="mavenCentralDependency"></a>
@@ -75,9 +75,8 @@
 ## <a id="usage"></a> Usage  
 Steps: 
 ### A. Import libray as:
-- <a href="https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar">JAR File</a> (<a href="./importation_methods/IMPORT_AS_JAR_FILE.txt">Instructions</a>)  
-- <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt">GitHub Dependency</a>
-- <a href="https://central.sonatype.com/artifact/io.github.jamalakida/java-rest-template-library">Maven Central Repository Dependency</a>
+- <a href="#importByDependency">Dependency</a>
+- <a href="#importByJarFile">Jar File</a>
 
 ### B. Create LibraryConfig configuration class for Instantiating the bean of RemoteAssistance
 ```bash
