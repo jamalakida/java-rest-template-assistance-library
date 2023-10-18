@@ -41,12 +41,12 @@
 - Any Java version (>= java 8)
 ```
 ## <a id="libraryImportation"></a>Library Importation
-### 1. Importing by dependency <a id="importByDependency"></a>
+###### 1. Importing by dependency <a id="importByDependency"></a>
 - A. <a href="./importation_methods/CALLING_GITHUB_JAVA_DEPENDENCY.txt"> GitHub</a>
 - B. <a href="https://central.sonatype.com/artifact/io.github.jamalakida/java-rest-template-library">Maven Central</a>
 - C. <a href="https://mvnrepository.com/artifact/io.github.jamalakida/java-rest-template-library/1.0.0">Maven Repository</a>
 
-### 2. Importing by jar file <a id="importByJarFile"></a>
+###### 2. Importing by jar file <a id="importByJarFile"></a>
 - <a href="https://github.com/jamalakida/java-rest-template-assistance-library/releases/download/prod/rest-template-library-1.0.0.jar">Download release package</a> | <a href="./importation_methods/IMPORT_AS_JAR_FILE.txt"> Instructions</a>
 
 <a id="mavenCentralDependency"></a>
@@ -100,6 +100,8 @@ public class LibraryConfig {
 ### D. <a id="usage-single-data"></a> Normal Data Response
 ###### 01. FOR GETTING SINGLE DATA RESPONSE (GET METHOD AS A DEFAULT HTTP METHOD TYPE):
 ```bash
+  Example: 
+  
   ProfileDto respProfileData = remoteAssistance.setHeaders(request).data("http://localhost:6666/app/data", ProfileDto.class);
  
   NOTE: request is HttpServletRequest
@@ -107,6 +109,8 @@ public class LibraryConfig {
 
 ###### 02. FOR GETTING SINGLE DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE):
 ```bash
+  Example: 
+  
   ProfileDto respProfileData = remoteAssistance.setHeaders(request).data("http://localhost:6666/app/data", ProfileDto.class, HttpMethod.GET);
  
   NOTE: request is HttpServletRequest
@@ -114,6 +118,8 @@ public class LibraryConfig {
 
 ###### 03. FOR GETTING SINGLE DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + REQUEST BODY AS OBJECT OF ANY TYPE:
 ```bash
+  Example: 
+  
   ProfileDto respProfileData= remoteAssistance.setHeaders(request).data("http://localhost:6666/app/data", ProfileDto.class, HttpMethod.POST, new Office("HQ"));
  
   NOTE: request is HttpServletRequest
@@ -121,6 +127,8 @@ public class LibraryConfig {
 
 ###### 04. FOR GETTING SINGLE DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + REQUEST BODY AS OBJECT LIST:
 ```bash
+  Example: 
+  
   ProfileDto respProfileData = remoteAssistance.setHeaders(request).data("http://localhost:6666/app/data", ProfileDto.class, HttpMethod.POST, List.of("HQ","REGIONAL"));
  
   NOTE: request is HttpServletRequest
@@ -128,6 +136,8 @@ public class LibraryConfig {
 
 ###### 05. FOR GETTING SINGLE DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + REQUEST PARAMETERS:
 ```bash
+  Example: 
+  
   MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("param1", "value1");
         params.add("param2", "value2");
@@ -139,6 +149,8 @@ public class LibraryConfig {
 
 ###### 06. FOR GETTING SINGLE DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + REQUEST PARAMETERS + REQUEST BODY:
 ```bash
+  Example: 
+  
   MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("param1", "value1");
         params.add("param2", "value2");
@@ -150,6 +162,8 @@ public class LibraryConfig {
 
 ###### 07. FOR GETTING SINGLE DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + REQUEST PARAMETERS + REQUEST BODY AS LIST:
 ```bash
+  Example: 
+  
   MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("param1", "value1");
         params.add("param2", "value2");
@@ -161,6 +175,8 @@ public class LibraryConfig {
 ### <a id="usage-list-data"></a> E. Data List Response
 ###### 01. FOR GETTING LIST DATA RESPONSE (BY USING GET AS A DEFAULT HTTP METHOD TYPE):
 ```bash
+  Example: 
+  
   List<ProfileDto> respProfileData = remoteAssistance.setHeaders(request).list("http://localhost:6666/app/data", ProfileDto.class);
  
   NOTE: request is HttpServletRequest
@@ -168,6 +184,8 @@ public class LibraryConfig {
 
 ###### 02. FOR GETTING LIST DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) :
 ```bash
+  Example: 
+  
   List<ProfileDto> respProfileDataList = remoteAssistance.setHeaders(request).list("http://localhost:6666/app/data", ProfileDto.class, HttpMethod.GET);
  
   NOTE: request is HttpServletRequest
@@ -175,6 +193,8 @@ public class LibraryConfig {
 
 ###### 03. FOR GETTING LIST DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + PARAMETERS + REQUEST BODY AS OBJECT:
 ```bash
+  Example: 
+  
   List<ProfileDto> respProfileDataList = remoteAssistance.setHeaders(request).list("http://localhost:6666/app/data", ProfileDto.class, HttpMethod.POST, new Office("HQ"));
  
   NOTE: request is HttpServletRequest
@@ -182,6 +202,8 @@ public class LibraryConfig {
 
 ###### 04. FOR GETTING LIST DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + REQUEST BODY AS OBJECT LIST:
 ```bash
+  Example: 
+  
   List<ProfileDto> respProfileDataList = remoteAssistance.setHeaders(request).list("http://localhost:6666/app/data", ProfileDto.class, HttpMethod.POST, List.of("HQ","REGIONAL"));
  
   NOTE: request is HttpServletRequest
@@ -189,6 +211,8 @@ public class LibraryConfig {
 
 ###### 05. FOR GETTING LIST DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + PARAMETERS:
 ```bash
+  Example: 
+  
   MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("param1", "value1");
         params.add("param2", "value2");
@@ -200,6 +224,8 @@ public class LibraryConfig {
 
 ###### 06. FOR GETTING LIST DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + PARAMETERS + REQUEST BODY AS OBJECT:
 ```bash
+  Example: 
+  
   MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("param1", "value1");
         params.add("param2", "value2");
@@ -211,6 +237,8 @@ public class LibraryConfig {
 
 ###### 07. FOR GETTING LIST DATA RESPONSE (BY SPECIFYING HTTP METHOD TYPE) + PARAMETERS + REQUEST BODY AS OBJECT LIST:
 ```bash
+  Example: 
+  
   MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("param1", "value1");
         params.add("param2", "value2");
