@@ -10,7 +10,7 @@ plugins {
 
 group 'com.jamal'
 archivesBaseName = 'rest-template-library'
-version '1.0.0'
+version '2.0.0'
 sourceCompatibility = '17'
 description = 'A Spring boot library created at 2023 for the purpose of facilitating rest template inter-service communication'
 
