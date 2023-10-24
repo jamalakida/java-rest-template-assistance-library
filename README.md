@@ -80,7 +80,16 @@ Steps:
 
 ### B. Instantiate the bean of the imported Remote Assistance Library (Use one the following technique)
 ######  Alternative 1: If you have main class in your project
-- Scan remote assistance package as follows
+
+- Import RemoteAssistance class
+```bash
+@Import({RemoteAssistance.class})
+
+NOTE: 
+    - your_project is the scan for your working project Example: tz.go.pccb.hrms.app
+    - You can use Alternative 2 instead on 1 even if you have main class in your project
+```
+- OR: Scan remote assistance package as follows
 ```bash
 @ComponentScan(basePackages = {"rest.template.library", "your_project"})
 
@@ -88,6 +97,7 @@ NOTE:
     - your_project is the scan for your working project Example: tz.go.pccb.hrms.app
     - You can use Alternative 2 instead on 1 even if you have main class in your project
 ```
+
 ###### Alternative 2: If you don't have main class in your project
 -  Create LibraryConfig configuration class 
 - Add the following codes
