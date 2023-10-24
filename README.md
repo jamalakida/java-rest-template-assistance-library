@@ -84,10 +84,6 @@ Steps:
 - Import RemoteAssistance class
 ```bash
 @Import({RemoteAssistance.class})
-
-NOTE: 
-    - your_project is the scan for your working project Example: tz.go.pccb.hrms.app
-    - You can use Alternative 2 instead on 1 even if you have main class in your project
 ```
 - OR: Scan remote assistance package as follows
 ```bash
