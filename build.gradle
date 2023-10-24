@@ -55,4 +55,4 @@ dependencyManagement {
 }
 
 // Call file for publishing package to respective repository
-apply from: 'publishing-maven-central.gradle'
+apply from: 'publishing-github.gradle'

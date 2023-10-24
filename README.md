@@ -80,8 +80,12 @@ Steps:
 
 ### B. Instantiate the bean of the imported Remote Assistance Library (Use one the following technique)
 ######  Alternative 1: If you have main class in your project
+- By Annotation: EnableRemoteAssistance
+```bash
+@EnableRemoteAssistance
+```
 
-- Import RemoteAssistance class
+- OR: Import RemoteAssistance class
 ```bash
 @Import({RemoteAssistance.class})
 ```
